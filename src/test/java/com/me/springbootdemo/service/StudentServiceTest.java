@@ -1,6 +1,7 @@
 package com.me.springbootdemo.service;
 
 import com.me.springbootdemo.entity.Student;
+import com.me.springbootdemo.service.impl.StudentServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class StudentServiceTest {
-    @Autowired
-    private StudentService studentService;
+
+    private StudentService studentService = new StudentServiceImpl();
+
     @Test
     public void testAddStudent(){
         Student student = new Student();
-        student.setName("af");
-        student.setId("16");
+        student.setName("ag");
+        student.setId("17");
         student.setAge(22);
         studentService.addStudent(student);
     }

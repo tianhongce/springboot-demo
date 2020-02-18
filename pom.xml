@@ -99,7 +99,6 @@
 
         <!-- ......用于扫描 dao 文件下的mapper 文件................. start -->
         <resources>
-
             <!-- 编译 src/main/java 目录下的 mapper 文件 -->
             <resource>
                 <directory>src/main/java</directory>
