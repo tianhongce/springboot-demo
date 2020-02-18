@@ -36,23 +36,22 @@
         </javaTypeResolver>
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.me.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.me.springbootdemo.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成mapxml文件 -->
-        <sqlMapGenerator targetPackage="com.me.mapper" targetProject="src/main/java" >
+        <sqlMapGenerator targetPackage="com.me.springbootdemo.mapper" targetProject="src/main/java" >
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- 生成mapxml对应client，也就是接口dao -->
-        <javaClientGenerator targetPackage="com.me.dao" targetProject="src/main/java" type="XMLMAPPER" >
+        <javaClientGenerator targetPackage="com.me.springbootdemo.dao" targetProject="src/main/java" type="XMLMAPPER" >
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
         <table tableName="student" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
-            <generatedKey column="id" sqlStatement="Mysql" identity="true" />
         </table>
 
     </context>

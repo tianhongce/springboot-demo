@@ -1,12 +1,9 @@
-package com.me.springbootdemo.com.me.controller;
+package com.me.springbootdemo.controller;
 
-import com.me.springbootdemo.com.me.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
@@ -14,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/hello")
     public String sayHello(Model model){
-        Student student = new Student("11","name");
-        model.addAttribute("student",student);
+//        Student student = new Student("11","name");
+//        model.addAttribute("student",student);
         return "hello";
     }
 }

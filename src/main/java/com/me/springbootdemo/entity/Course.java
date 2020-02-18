@@ -1,4 +1,4 @@
-package com.me.springbootdemo.com.me.entity;
+package com.me.springbootdemo.entity;
 
 /**
  * @ClassName Course
