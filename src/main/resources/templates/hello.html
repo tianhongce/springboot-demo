@@ -3,9 +3,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <p>hahahahaa</p>
-    <p th:text="${student.id}">default message</p>
+    <!--<p th:text="${student.id}">default message</p>-->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-
+<p th:text="${student.id}">default message</p>
 </body>
+
+<script>
+    console.log("a");
+    // for (var i = 0;i<10000;i++){
+    //     console.log(i);
+    // }
+    $(document).ready(function() {
+        console.log("b");
+    });
+
+    console.log("c");
+</script>
 </html>
