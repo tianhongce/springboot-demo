@@ -2,6 +2,8 @@ package com.me.springbootdemo.service;
 
 import com.me.springbootdemo.entity.Student;
 
+import java.util.List;
+
 /**
  * @author tianhongce
  * @version 1.0
@@ -9,4 +11,6 @@ import com.me.springbootdemo.entity.Student;
  */
 public interface StudentService {
     public int addStudent(Student student);
+
+    public List<Student> getStudents();
 }

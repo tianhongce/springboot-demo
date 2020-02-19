@@ -18,13 +18,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest
 public class StudentServiceTest {
 
-    private StudentService studentService = new StudentServiceImpl();
+    @Autowired
+    private StudentService studentService;
 
     @Test
     public void testAddStudent(){
         Student student = new Student();
-        student.setName("ag");
-        student.setId("17");
+        student.setName("bb");
+        student.setId("32");
         student.setAge(22);
         studentService.addStudent(student);
     }
