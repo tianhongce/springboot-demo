@@ -38,4 +38,5 @@ public class HelloController {
         }
         return "good";
     }
+    //todo 测试枚举类，baomidou.mybatisplus.core.metadata.ipage
 }
