@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Echarts-Demo</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/model-demo.css"  th:href="@{/css/model-demo.css}"  />
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/dist/echarts.js}"></script>
+</head>
+<body>
+<p>Echarts-Demo</p>
+<!--<button onclick="line()">折线图</button>-->
+<!--<button onclick="realTimeMonitor()">实时监控</button>-->
+<!--<button ONCLICK="isLoaded=false">关闭</button>-->
+<!--<div id="main" style="width: 600px;height:400px;"></div>-->
+<form id="goodForm">
+    <input id="startTime">
+    <input id="endTime">
+    <button type="button" id="submitButton">提交按钮</button>
+
+</form>
+<!--<div id="dddd" style="width: 100%;height:600px;margin: 0 auto">-->
+    <!--<div id="main" style="width: 100%;height:100%;"></div>-->
+<!--</div>-->
+
+<!-- 触发按钮 -->
+<button id="triggerBtn">模态框</button>
+<button id="goodButton" onclick="aa()">开始</button>
+<!-- 模态框 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>头部</h2>
+            <span id="closeBtn" class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>这是一个模态框！</p>
+            <p>喜欢就点个赞吧！</p>
+            <button id="monitor" onclick="realTimeMonitor()">实时监控</button>
+            <button ONCLICK="closeMonitor()">关闭</button>
+
+            <div id="dddd" style="width: 100%;height:600px;margin: 0 auto">
+                <div id="main" style="width: 100%;height:100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <h3>尾部</h3>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" th:src="@{/js/echarts-demo.js}"></script>
+<script>
+    (function() {
+        /*建立模态框对象*/
+        var modalBox = {};
+        console.log("建立模态框对象");
+
+        /*获取模态框*/
+        modalBox.modal = document.getElementById("myModal");
+
+        /*获得trigger按钮*/
+        modalBox.triggerBtn = document.getElementById("triggerBtn");
+
+        /*获得关闭按钮*/
+        modalBox.closeBtn = document.getElementById("closeBtn");
+
+        /*模态框显示*/
+        modalBox.show = function() {
+            console.log(this.modal);
+            genChart();
+            this.modal.style.display = "block";
+        }
+
+        /*模态框关闭*/
+        modalBox.close = function() {
+            closeMonitor();
+            this.modal.style.display = "none";
+        }
+
+        /*当用户点击模态框内容之外的区域，模态框也会关闭*/
+        modalBox.outsideClick = function() {
+            var modal = this.modal;
+            window.onclick = function(event) {
+                if(event.target == modal) {
+                    closeMonitor();
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        /*模态框初始化*/
+        modalBox.init = function() {
+            var that = this;
+            this.triggerBtn.onclick = function() {
+                console.log("triggerBtn.onclick");
+                that.show();
+            }
+            this.closeBtn.onclick = function() {
+                console.log("closeBtn.onclick");
+                that.close();
+            }
+            this.outsideClick();
+        }
+
+        modalBox.init();
+    })();
+
+    $("#submitButton").click(function () {
+        console.log("aasdfasd");
+        // $.ajax({
+        //     type: "POST",   //提交的方法
+        //     url: "/home/request", //提交的地址
+        //     data: $('#goodForm').serialize(),// 序列化表单值
+        //     async: false,
+        //     error: function (request) {  //失败的话
+        //         alert("Connection error");
+        //     },
+        //     success: function (data) {  //成功
+        //         alert(data);  //就将返回的数据显示出来
+        //         window.location.href = "跳转页面"
+        //     }
+        // });
+    });
+
+
+</script>
+</html>

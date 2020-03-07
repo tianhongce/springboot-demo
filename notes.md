@@ -34,7 +34,26 @@
 
 - 生成方法
 
-一个是默认的1L，比如：private static final long serialVersionUID = 1L;
+一个是默认的1L，比如：private static final long aLong = 1L;
 
-一个是根据类名、接口名、成员方法及属性等来生成一个64位的哈希字段，比如：private static final long serialVersionUID = -8940196742313994740L;之类的。
+一个是根据类名、接口名、成员方法及属性等来生成一个64位的哈希字段，比如：private static final long aLong = -8940196742313994740L;之类的。
 
+
+# Java序列化和反序列化
+
+# Echarts
+
+# thymeleaf使用注意事项
+
+# 枚举类
+# baomidou.mybatisplus.core.metadata.ipage
+# !!!注意：java对象转成json成立的基本条件只需要有get方法！！！
+java对象转换成json字符串，若想要获得key、alue键值对，只需要对象中有getXxx(  )方法即可！！！！
+# JS闭包
+
+# git使用
+git -- Authentication failed for 
+
+Git rebase使用
+
+git ssh-keygen权限问题

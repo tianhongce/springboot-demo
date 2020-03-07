@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="a">hello</p>
+</body>
+</html>
+<script>
+    $(function () {
+        console.log("aa");
+        xx();
+    })
+
+    function xx() {
+        $.ajax({
+            url: "/demo/index/students",
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                alert(data);
+            },
+            error: function () {
+                alert("操作失败");
+                $("#a").html("ccc");
+            }
+        })
+    }
+</script>

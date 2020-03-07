@@ -3,13 +3,27 @@ package com.me.springbootdemo.entity;
 import java.io.Serializable;
 
 public class Student implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
 
     private String name;
 
     private Integer age;
 
-    private static final long serialVersionUID = 1L;
+
+    public Student() {
+    }
+
+    public Student(String id, String name, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public String getId() {
         return id;
@@ -37,15 +51,10 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", age=").append(age);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
